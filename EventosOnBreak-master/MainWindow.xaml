@@ -1,0 +1,37 @@
+﻿<Controls:MetroWindow x:Class="EventosOnBreak_master.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EventosOnBreak_master"
+        mc:Ignorable="d"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:behaviours="clr-namespace:MahApps.Metro.Behaviours;assembly=MahApps.Metro"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        Title="Eventos OnBreak | Home" Height="450" Width="800">
+    <Grid>
+        <Controls:Tile x:Name="btnRegistrarCliente" Title="Administrar Clientes" Width="250" Height="Auto" Margin="19,130,524.6,15" Background="#FF1291CB" Click="BtnRegistrarCliente" >
+        <Image Source="Images/Business-Man-Settings-01.png" Width="150" Height="150" />
+        </Controls:Tile>
+        <Controls:Tile x:Name="btnListarClientes" Title="Listar Clientes" Width="250" Height="Auto" Margin="274,270,269.6,15" Background="#FF0091CF" Click="BtnListarClientes_Click" >
+            <Image Source="Images/Business-Man-Search.png" Width="120" Height="120" />
+        </Controls:Tile>
+        <Controls:Tile x:Name="btnRegistrarContrato" Title="Administrar Contratos" Width="250" Height="Auto" Margin="274,130,269.6,155" Background="#FF4CBCEF" Click="BtnRegistrarContrato_Click" >
+            <Image Source="Images/Document-Settings-01.png" Width="120" Height="120" />
+        </Controls:Tile>
+        <Controls:Tile x:Name="btnListarContratos" Title="Listar Contratos" Width="250" Height="Auto" Margin="529,130,14.6,155" Background="#FF0091CF" Click="BtnListarContratos_Click" >
+            <Image Source="Images/Document-Find.png" Width="120" Height="120" />
+        </Controls:Tile>
+        <Controls:Tile x:Name="btnSalir" Title="Salir" Width="250" Height="Auto" Margin="529,270,14.6,15" Background="#CCC70000" Click="BtnSalir_Click" >
+            <Image Source="Images/Exit.png" Width="120" Height="120" />
+        </Controls:Tile>
+
+
+
+        <Image HorizontalAlignment="Left" Height="100" Margin="21,10,0,0" VerticalAlignment="Top" Width="100" Source="Images/logo_transparent_background.png" Stretch="Fill"/>
+        <Label Content="Bienvenido!" HorizontalAlignment="Left" Margin="604,36,0,0" VerticalAlignment="Top" Cursor="None" FontSize="30" FontWeight="Bold" Background="{x:Null}" Foreground="#FF7A7A7A"/>
+
+
+
+    </Grid>
+</Controls:MetroWindow>
