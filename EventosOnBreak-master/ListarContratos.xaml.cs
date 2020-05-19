@@ -15,6 +15,8 @@ using System.Windows.Shapes;
 using MahApps.Metro.Controls;
 using MahApps.Metro.Behaviours;
 using MahApps.Metro.Controls.Dialogs;
+using OnBreak.Negocio;
+
 
 
 namespace EventosOnBreak_master
@@ -27,6 +29,7 @@ namespace EventosOnBreak_master
         public ListarContratos()
         {
             InitializeComponent();
+            llenarGrilla();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -35,5 +38,17 @@ namespace EventosOnBreak_master
             this.Close();
             principal.ShowDialog();
         }
+
+        private void llenarGrilla()
+        {
+
+            List<OnBreak.Negocio.Contrato> listaContrato = new List<OnBreak.Negocio.Contrato>();
+            OnBreak.Negocio.Contrato objContrato = new OnBreak.Negocio.Contrato();
+
+            listaContrato = objContrato.LeerTodo();
+            dgContratos.ItemsSource = listaContrato;
+
+        }
     }
+       
 }

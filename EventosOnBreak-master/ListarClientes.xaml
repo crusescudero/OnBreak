@@ -15,7 +15,7 @@
             <ColumnDefinition Width="159*"/>
         </Grid.ColumnDefinitions>
         <Image HorizontalAlignment="Left" Height="100" Margin="10,10,0,0" VerticalAlignment="Top" Width="100" Source="Images/logo_transparent_background.png" Stretch="Fill"/>
-        <DataGrid HorizontalAlignment="Left" Height="266" Margin="10,157,0,0" VerticalAlignment="Top" Width="774" Background="#FFE8E8E8" BorderBrush="Black" Grid.ColumnSpan="2" />
+        <DataGrid x:Name="dgClientes" HorizontalAlignment="Left" Height="266" Margin="10,157,0,0" VerticalAlignment="Top" Width="774" Background="#FFE8E8E8" BorderBrush="Black" Grid.ColumnSpan="2" />
 
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="138" Margin="147,14,0,0" VerticalAlignment="Top" Width="620" Grid.ColumnSpan="2"/>
         <ComboBox HorizontalAlignment="Left" Margin="585,71,0,0" VerticalAlignment="Top" Width="156" Grid.ColumnSpan="2">

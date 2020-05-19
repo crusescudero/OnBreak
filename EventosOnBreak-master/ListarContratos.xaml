@@ -26,7 +26,7 @@
             <ComboBoxItem Content="Limitada"/>
             <ComboBoxItem Content="Sociedad Anónima"/>
         </ComboBox>
-        <DataGrid HorizontalAlignment="Left" Height="266" Margin="9,157,0,0" VerticalAlignment="Top" Width="774" Background="#FFE8E8E8" BorderBrush="Black"/>
+        <DataGrid x:Name="dgContratos" HorizontalAlignment="Left" Height="266" Margin="9,157,0,0" VerticalAlignment="Top" Width="774" Background="#FFE8E8E8" BorderBrush="Black" />
         <Image HorizontalAlignment="Left" Height="26" Margin="10,434,0,0" VerticalAlignment="Top" Width="143" Source="Images/Logo Duoc UC Escuela IT.jpg" Stretch="Fill"/>
 
         <Button x:Name="btnVolver" Content="Volver" HorizontalAlignment="Left" Margin="683,434,0,0" VerticalAlignment="Top" Width="100" Style="{DynamicResource SquareButtonStyle}" Click="Button_Click" Height="28" />

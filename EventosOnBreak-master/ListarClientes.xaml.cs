@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using MahApps.Metro.Controls;
 using MahApps.Metro.Controls.Dialogs;
 using MahApps.Metro.Behaviours;
+using OnBreak.Negocio;
 
 namespace EventosOnBreak_master
 {
@@ -25,6 +26,7 @@ namespace EventosOnBreak_master
         public ListarClientes()
         {
             InitializeComponent();
+            llenarGrilla();
         }
 
        
@@ -36,6 +38,17 @@ namespace EventosOnBreak_master
             principal.ShowDialog();
         }
 
-        
+        private void llenarGrilla()
+        {
+
+            List<OnBreak.Negocio.Cliente> listaClientes = new List<OnBreak.Negocio.Cliente>();
+            OnBreak.Negocio.Cliente objCliente = new OnBreak.Negocio.Cliente();
+
+            listaClientes = objCliente.LeerTodo();
+            dgClientes.ItemsSource = listaClientes;
+
+        }
+
+
     }
 }

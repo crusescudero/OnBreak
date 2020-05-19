@@ -221,6 +221,12 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OnBreak.Negocio\OnBreak.Negocio.csproj">
+      <Project>{9cc28708-8d56-49d3-80b9-aa1384c7c8bd}</Project>
+      <Name>OnBreak.Negocio</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
