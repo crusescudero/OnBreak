@@ -18,6 +18,8 @@ namespace OnBreak.Negocio
         public int IdActividadEmpresa { get; set; }
         public int IdTipoEmpresa { get; set; }
 
+
+
         public List<Negocio.Cliente> LeerTodo()
 
         {

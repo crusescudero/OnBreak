@@ -23,22 +23,11 @@
         <TextBox  Controls:TextBoxHelper.Watermark="Ingrese Mail" HorizontalAlignment="Left" Height="23" Margin="247,115,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" RenderTransformOrigin="0.51,0.487"/>
         <TextBox Controls:TextBoxHelper.Watermark="Ingrese Dirección" HorizontalAlignment="Left" Height="23" Margin="247,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="185"/>
         <TextBox Controls:TextBoxHelper.Watermark="Ingrese Teléfono"  HorizontalAlignment="Left" Height="23" Margin="247,176,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="185"/>
-        <ComboBox HorizontalAlignment="Left" Margin="247,238,0,0" VerticalAlignment="Top" Width="185">
-            <ComboBoxItem Content="SPA "/>
-            <ComboBoxItem Content="EIRL"/>
-            <ComboBoxItem Content="Limitada"/>
-            <ComboBoxItem Content="Sociedad Anónima"/>
-        </ComboBox>
-        <ComboBox HorizontalAlignment="Left" Margin="247,207,0,0" VerticalAlignment="Top" Width="185">
-            <ComboBoxItem Content="Agropecuaria "/>
-            <ComboBoxItem Content="Minería"/>
-            <ComboBoxItem Content="Manufactura"/>
-            <ComboBoxItem Content="Comercio"/>
-            <ComboBoxItem Content="Hotelería"/>
-            <ComboBoxItem Content="Alimentos"/>
-            <ComboBoxItem Content="Transporte"/>
-            <ComboBoxItem Content="Servicios"/>
-        </ComboBox>
+        <ComboBox x:Name="cboTipo" HorizontalAlignment="Left" Margin="247,238,0,0" VerticalAlignment="Top" Width="185" SelectedValuePath="IdTipoEmpresa" DisplayMemberPath="Descripcion"/>
+
+        <ComboBox x:Name="cboActividad" HorizontalAlignment="Left" Margin="247,207,0,0" VerticalAlignment="Top" Width="185" SelectedValuePath="IdActividadEmpresa" DisplayMemberPath="Descripcion"/>
+
+
         <Image HorizontalAlignment="Left" Height="100" Margin="10,10,0,0" VerticalAlignment="Top" Width="100" Source="Images/logo_transparent_background.png" Stretch="Fill"/>
         <Label Content="RUT" HorizontalAlignment="Left" Margin="123,21,0,0" VerticalAlignment="Top" Width="95" RenderTransformOrigin="0.482,2.893"/>
         <TextBox Controls:TextBoxHelper.Watermark="Ingrese Nro." HorizontalAlignment="Left" Height="23" Margin="247,21,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" />

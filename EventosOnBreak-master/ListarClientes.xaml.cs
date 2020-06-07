@@ -26,6 +26,8 @@ namespace EventosOnBreak_master
         public ListarClientes()
         {
             InitializeComponent();
+            llenarActividad();
+            llenarTipo();
             llenarGrilla();
         }
 
@@ -47,6 +49,18 @@ namespace EventosOnBreak_master
             listaClientes = objCliente.LeerTodo();
             dgClientes.ItemsSource = listaClientes;
 
+        }
+
+        private void llenarActividad()
+        {
+            OnBreak.Negocio.ActividadEmpresa act = new OnBreak.Negocio.ActividadEmpresa();
+            cboActividad.ItemsSource = act.ListarTodo();
+        }
+
+        private void llenarTipo()
+        {
+            OnBreak.Negocio.TipoEmpresa tip = new OnBreak.Negocio.TipoEmpresa();
+            cboTipo.ItemsSource = tip.ListarTodo();
         }
 
 

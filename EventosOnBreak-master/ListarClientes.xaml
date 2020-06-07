@@ -17,23 +17,10 @@
         <Image HorizontalAlignment="Left" Height="100" Margin="10,10,0,0" VerticalAlignment="Top" Width="100" Source="Images/logo_transparent_background.png" Stretch="Fill"/>
         <DataGrid x:Name="dgClientes" HorizontalAlignment="Left" Height="266" Margin="10,157,0,0" VerticalAlignment="Top" Width="774" Background="#FFE8E8E8" BorderBrush="Black" Grid.ColumnSpan="2" />
 
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="138" Margin="147,14,0,0" VerticalAlignment="Top" Width="620" Grid.ColumnSpan="2"/>
-        <ComboBox HorizontalAlignment="Left" Margin="585,71,0,0" VerticalAlignment="Top" Width="156" Grid.ColumnSpan="2">
-            <ComboBoxItem Content="SPA"/>
-            <ComboBoxItem Content="EIRL"/>
-            <ComboBoxItem Content="Limitada"/>
-            <ComboBoxItem Content="Sociedad Anónima"/>
-        </ComboBox>
-        <ComboBox HorizontalAlignment="Left" Margin="388,71,0,0" VerticalAlignment="Top" Width="156">
-            <ComboBoxItem Content="Agropecuaria"/>
-            <ComboBoxItem Content="Minería"/>
-            <ComboBoxItem Content="Manufactura"/>
-            <ComboBoxItem Content="Comercio"/>
-            <ComboBoxItem Content="Hoteleria"/>
-            <ComboBoxItem Content="Alimentos"/>
-            <ComboBoxItem Content="Transporte"/>
-            <ComboBoxItem Content="Servicios"/>
-        </ComboBox>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="138" Margin="147,14,0,0" VerticalAlignment="Top" Width="620" Grid.ColumnSpan="2" />
+        <ComboBox x:Name="cboTipo" HorizontalAlignment="Left" Margin="585,71,0,0" VerticalAlignment="Top" Width="156" Grid.ColumnSpan="2" SelectedValuePath="IdTipoEmpresa" DisplayMemberPath="Descripcion" />
+        <ComboBox x:Name="cboActividad" HorizontalAlignment="Left" Margin="388,71,0,0" VerticalAlignment="Top" Width="156" SelectedValuePath="IdActividadEmpresa" DisplayMemberPath="Descripcion"/>
+        
         <Button Content="Filtrar" HorizontalAlignment="Left" Margin="14.4,111,0,0" VerticalAlignment="Top" Width="92"  Style="{StaticResource AccentedSquareButtonStyle}" Grid.Column="1" />
         <Label Content="Filtrar por:" HorizontalAlignment="Left" Margin="147,14,0,0" VerticalAlignment="Top"/>
         <Label Content="Tipo de Empresa:" HorizontalAlignment="Left" Margin="585,46,0,0" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
