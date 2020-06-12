@@ -20,34 +20,30 @@
         <Label Content="Inicio Evento" HorizontalAlignment="Left" Margin="123,114,0,0" VerticalAlignment="Top" Width="104"/>
         <Label Content="Dirección" HorizontalAlignment="Left" Margin="123,174,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.595,3.159" Width="65"/>
         <Label Content="Término Evento" HorizontalAlignment="Left" Margin="123,144,0,0" VerticalAlignment="Top" Width="123"/>
-        <Label Content="Observaciones" HorizontalAlignment="Left" Margin="123,238,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.767,11.91"/>
+        <Label Content="Observaciones" HorizontalAlignment="Left" Margin="125,337,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.767,11.91"/>
         <DatePicker HorizontalAlignment="Left" Margin="246,51,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.519,-0.753" Width="187"/>
         <DatePicker HorizontalAlignment="Left" Margin="246,84,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.128,1.116" Width="187"/>
-        <TextBox HorizontalAlignment="Left" Height="92" Margin="246,242,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="188"/>
-        <TextBox Controls:TextBoxHelper.Watermark="Ingrese Nro." HorizontalAlignment="Left" Height="23" Margin="247,21,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" />
+        <TextBox HorizontalAlignment="Left" Height="92" Margin="248,341,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="188"/>
+        <TextBox Controls:TextBoxHelper.Watermark="Ingrese Nro." HorizontalAlignment="Left" Height="23" Margin="247,21,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" />
         <Control:DateTimePicker  HorizontalAlignment="Left" Height="23" Margin="246,115,0,0" VerticalAlignment="Top" Width="187" Controls:TextBoxHelper.Watermark="Seleccione Fecha y Hora" SelectedTimeFormat="Short" />
         <Control:DateTimePicker HorizontalAlignment="Left" Height="23" Margin="246,144,0,0"  VerticalAlignment="Top" Width="187" Controls:TextBoxHelper.Watermark="Seleccione Fecha y Hora" SelectedTimeFormat="Short" />
-        <TextBox Controls:TextBoxHelper.Watermark="Ingrese dirección" HorizontalAlignment="Left" Height="23" Margin="246,175,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="188" RenderTransformOrigin="3.91,-3.987"/>
-        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="147" Margin="124,339,0,0" Stroke="Black" VerticalAlignment="Top" Width="341"/>
-        <Label Content="Tipo Evento" HorizontalAlignment="Left" Margin="124,339,0,0" VerticalAlignment="Top"/>
-        <Label Content="ID" HorizontalAlignment="Left" Margin="137,363,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.434,-0.282"/>
-        <Label Content="Nombre" HorizontalAlignment="Left" Margin="137,392,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.234,0.414"/>
-        <Label Content="Valor Base" HorizontalAlignment="Left" Margin="137,423,0,0" VerticalAlignment="Top"/>
-        <Label Content="Personal Base" HorizontalAlignment="Left" Margin="137,454,0,0" VerticalAlignment="Top"/>
-        <TextBox Controls:TextBoxHelper.Watermark="Ingrese nombre" HorizontalAlignment="Left" Height="23" Margin="246,391,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" IsEnabled="False"/>
-        <TextBox Controls:TextBoxHelper.Watermark="Ingrese Nro." HorizontalAlignment="Left" Height="23" Margin="246,361,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="186"/>
-        <TextBox Controls:TextBoxHelper.Watermark="Ingrese valor" HorizontalAlignment="Left" Height="23" Margin="246,423,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" IsEnabled="False"/>
-        <TextBox Controls:TextBoxHelper.Watermark="Ingrese cantidad" HorizontalAlignment="Left" Height="23" Margin="246,454,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" IsEnabled="False"/>
+        <TextBox Controls:TextBoxHelper.Watermark="Ingrese dirección" HorizontalAlignment="Left" Height="23" Margin="246,175,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" RenderTransformOrigin="3.91,-3.987"/>
         <Image HorizontalAlignment="Left" Height="100" Margin="10,10,0,0" VerticalAlignment="Top" Width="100" Source="Images/logo_transparent_background.png" Stretch="Fill"/>
-        <Label Content="Estado del Contrato" HorizontalAlignment="Left" Margin="123,207,0,0" VerticalAlignment="Top" Width="123"/>
+        <Label Content="Estado del Contrato" HorizontalAlignment="Left" Margin="125,306,0,0" VerticalAlignment="Top" Width="123"/>
         <Image HorizontalAlignment="Left" Height="26" Margin="10,487,0,0" VerticalAlignment="Top" Width="143" Source="Images/Logo Duoc UC Escuela IT.jpg" Stretch="Fill"/>
-        <RadioButton Content="Vigente" HorizontalAlignment="Left" Margin="247,211,0,0" VerticalAlignment="Top" IsChecked="True" GroupName="Vigencia"/>
-        <RadioButton Content="No Vigente" HorizontalAlignment="Left" Margin="349,211,0,0" VerticalAlignment="Top" GroupName="Vigencia"/>
+        <RadioButton Content="Vigente" HorizontalAlignment="Left" Margin="249,310,0,0" VerticalAlignment="Top" IsChecked="True" GroupName="Vigencia"/>
+        <RadioButton Content="No Vigente" HorizontalAlignment="Left" Margin="351,310,0,0" VerticalAlignment="Top" GroupName="Vigencia"/>
         <Button x:Name="btnVolver" Content="Volver" HorizontalAlignment="Left" Margin="453,92,0,0" VerticalAlignment="Top" Width="100" Style="{DynamicResource SquareButtonStyle}" Click="Button_Click" Height="28" />
 
         <Button Content="Guardar" HorizontalAlignment="Left" Margin="453,25,0,0" VerticalAlignment="Top" Width="100"  Style="{StaticResource AccentedSquareButtonStyle}" Height="28" />
         <Button Content="Eliminar" HorizontalAlignment="Left" Margin="453,58,0,0" VerticalAlignment="Top" Width="100"  Style="{DynamicResource SquareButtonStyle}" Height="28" />
         <Image HorizontalAlignment="Left" Height="100" Margin="10,10,0,0" VerticalAlignment="Top" Width="100" Source="Images/logo_transparent_background.png" Stretch="Fill"/>
+        <ComboBox x:Name="cboModalidad" HorizontalAlignment="Left" Margin="246,206,0,0" VerticalAlignment="Top" Width="187" SelectedValuePath="IdModalidad" DisplayMemberPath="Nombre"/>
+        <Label Content="Modalidad Servicio" HorizontalAlignment="Left" Margin="123,206,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.595,3.159" Width="112"/>
+        <Label Content="Asistentes" HorizontalAlignment="Left" Margin="123,236,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.595,3.159" Width="65"/>
+        <TextBox Controls:TextBoxHelper.Watermark="Ingrese cantidad de asistentes" HorizontalAlignment="Left" Height="23" Margin="246,237,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" RenderTransformOrigin="3.91,-3.987"/>
+        <Label Content="Personal Adicional" HorizontalAlignment="Left" Margin="123,267,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.595,3.159" Width="112"/>
+        <TextBox Controls:TextBoxHelper.Watermark="Ingrese personal adicional" HorizontalAlignment="Left" Height="23" Margin="246,268,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" RenderTransformOrigin="3.91,-3.987"/>
 
 
     </Grid>

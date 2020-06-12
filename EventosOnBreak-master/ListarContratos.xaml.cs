@@ -30,6 +30,7 @@ namespace EventosOnBreak_master
         {
             InitializeComponent();
             llenarGrilla();
+            llenarModalidad();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -48,6 +49,12 @@ namespace EventosOnBreak_master
             listaContrato = objContrato.LeerTodo();
             dgContratos.ItemsSource = listaContrato;
 
+        }
+
+        private void llenarModalidad()
+        {
+            OnBreak.Negocio.ModalidadServicio mod = new OnBreak.Negocio.ModalidadServicio();
+            cboModalidad.ItemsSource = mod.ListarTodo();
         }
     }
        

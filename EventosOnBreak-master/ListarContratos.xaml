@@ -20,12 +20,9 @@
         <Image HorizontalAlignment="Left" Height="100" Margin="10,10,0,0" VerticalAlignment="Top" Width="100" Source="Images/logo_transparent_background.png" Stretch="Fill"/>
         <TextBox Control:TextBoxHelper.Watermark="Nro. de contrato"  Control:TextBoxHelper.ClearTextButton="True" HorizontalAlignment="Left" Margin="388,72,0,0" VerticalAlignment="Top" Width="156" Foreground="Black" Height="26"/>
         <TextBox Control:TextBoxHelper.Watermark="Ingrese RUT del cliente"  Control:TextBoxHelper.ClearTextButton="True" HorizontalAlignment="Left" Margin="172,72,0,0" VerticalAlignment="Top" Width="175" Foreground="Black" Height="26" RenderTransformOrigin="0.764,0.462"/>
-        <ComboBox Control:TextBoxHelper.Watermark="Tipo de contrato" HorizontalAlignment="Left" Margin="585,72,0,0" VerticalAlignment="Top" Width="156" Height="26">
-            <ComboBoxItem Content="SPA"/>
-            <ComboBoxItem Content="EIRL"/>
-            <ComboBoxItem Content="Limitada"/>
-            <ComboBoxItem Content="Sociedad Anónima"/>
-        </ComboBox>
+        <ComboBox x:Name="cboModalidad" Control:TextBoxHelper.Watermark="Modalidad de contrato" HorizontalAlignment="Left" Margin="585,72,0,0" VerticalAlignment="Top" Width="156" Height="26" SelectedValuePath="IdTipoEmpresa" DisplayMemberPath="Descripcion"/>
+
+
         <DataGrid x:Name="dgContratos" HorizontalAlignment="Left" Height="266" Margin="9,157,0,0" VerticalAlignment="Top" Width="774" Background="#FFE8E8E8" BorderBrush="Black" />
         <Image HorizontalAlignment="Left" Height="26" Margin="10,434,0,0" VerticalAlignment="Top" Width="143" Source="Images/Logo Duoc UC Escuela IT.jpg" Stretch="Fill"/>
 
@@ -33,7 +30,7 @@
         <Label Content="Filtrar por:" HorizontalAlignment="Left" Margin="147,14,0,0" VerticalAlignment="Top" Height="26" Width="64"/>
         <Button Content="Filtrar" HorizontalAlignment="Left" Margin="649,111,0,0" VerticalAlignment="Top" Width="92"  Style="{StaticResource AccentedSquareButtonStyle}" Height="28" />
         <Button Content="Limpiar" HorizontalAlignment="Left" Margin="552,111,0,0" VerticalAlignment="Top" Width="92"  Style="{DynamicResource SquareButtonStyle}" Height="28" />
-        <Label Content="Tipo de contrato:" HorizontalAlignment="Left" Margin="585,46,0,0" VerticalAlignment="Top" Width="120" Height="26"/>
+        <Label Content="Modalidad de contrato:" HorizontalAlignment="Left" Margin="585,46,0,0" VerticalAlignment="Top" Width="156" Height="26"/>
         <Label Content="Nro. de contrato:" HorizontalAlignment="Left" Margin="388,46,0,0" VerticalAlignment="Top" Width="120" Height="26"/>
         <Label Content="RUT:" HorizontalAlignment="Left" Margin="172,46,0,0" VerticalAlignment="Top" Width="120" Height="26"/>
 

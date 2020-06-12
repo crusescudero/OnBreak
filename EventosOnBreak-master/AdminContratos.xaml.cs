@@ -25,6 +25,7 @@ namespace EventosOnBreak_master
         public AdminContratos()
         {
             InitializeComponent();
+            llenarModalidad();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -32,6 +33,12 @@ namespace EventosOnBreak_master
             MainWindow principal = new MainWindow();
             this.Close();
             principal.ShowDialog();
+        }
+
+        private void llenarModalidad()
+        {
+            OnBreak.Negocio.ModalidadServicio mod = new OnBreak.Negocio.ModalidadServicio();
+            cboModalidad.ItemsSource = mod.ListarTodo();
         }
     }
 }
