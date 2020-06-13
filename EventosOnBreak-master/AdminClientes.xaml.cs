@@ -152,7 +152,7 @@ namespace EventosOnBreak_master
             else
             {
                 MessageBox.Show("Eliminar", "Datos NO eliminados");
-            }
+            }   
         }
 
         private void btnModif_Click(object sender, RoutedEventArgs e)
