@@ -33,5 +33,7 @@ namespace OnBreak.Datos
         public virtual TipoEmpresa TipoEmpresa { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Contrato> Contrato { get; set; }
+
+        
     }
 }

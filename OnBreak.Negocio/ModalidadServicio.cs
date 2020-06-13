@@ -9,7 +9,6 @@ namespace OnBreak.Negocio
 {
     public class ModalidadServicio
     {
-        private Datos.OnBreakEntities conexion = new OnBreakEntities();
 
         public string IdModalidad { get; set; }
         public int IdTipoEvento { get; set; }
@@ -19,21 +18,30 @@ namespace OnBreak.Negocio
 
         public List<ModalidadServicio> ListarTodo()
         {
-            List<ModalidadServicio> listaMod = new List<ModalidadServicio>();
-            List<Datos.ModalidadServicio> listadatos = conexion.ModalidadServicio.ToList();
-
-            foreach (Datos.ModalidadServicio dat in listadatos)
+            try
             {
-                ModalidadServicio mod = new ModalidadServicio();
-                mod.IdModalidad = mod.IdModalidad;
-                mod.IdTipoEvento = mod.IdTipoEvento;
-                mod.Nombre = mod.Nombre;
-                mod.ValorBase = mod.ValorBase;
-                mod.PersonalBase = mod.PersonalBase;
+                Datos.OnBreakEntities conexion = new OnBreakEntities();
+                List<Datos.ModalidadServicio> listadatos = conexion.ModalidadServicio.ToList<Datos.ModalidadServicio>();
+                List<Negocio.ModalidadServicio> listaTipo = new List<ModalidadServicio>();
 
-                listaMod.Add(mod);
+                foreach (Datos.ModalidadServicio objDat in listadatos)
+                {
+                    Negocio.ModalidadServicio objTip = new ModalidadServicio();
+                    objTip.IdModalidad = objDat.IdModalidad;
+                    objTip.IdTipoEvento = objDat.IdTipoEvento;
+                    objTip.Nombre = objDat.Nombre;
+                    objTip.ValorBase = objDat.ValorBase;
+                    objTip.PersonalBase = objDat.PersonalBase;
+
+
+                    listaTipo.Add(objTip);
+                }
+                return listaTipo;
             }
-            return listaMod;
+            catch (Exception e)
+            {
+                return new List<ModalidadServicio>();
+            }
         }
     }
 }

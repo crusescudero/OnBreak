@@ -9,8 +9,8 @@
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         xmlns:behaviours="clr-namespace:MahApps.Metro.Behaviours;assembly=MahApps.Metro"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
-        Title="Eventos OnBreak | Administrador de clientes" Height="340" Width="570">
-    <Grid>
+        Title="Eventos OnBreak | Administrador de clientes" Height="444" Width="946.251">
+    <Grid Margin="0,0,17.5,0" Height="411" VerticalAlignment="Top">
         <Label Content="Razón social" HorizontalAlignment="Left" Margin="124,52,0,0" VerticalAlignment="Top" Width="109"/>
         <Label Content="Nombre Contacto" HorizontalAlignment="Left" Margin="123,83,0,0" VerticalAlignment="Top" Width="104"/>
         <Label Content="Mail Contacto" HorizontalAlignment="Left" Margin="124,114,0,0" VerticalAlignment="Top" Width="123"/>
@@ -18,11 +18,11 @@
         <Label Content="Teléfono " HorizontalAlignment="Left" Margin="124,176,0,0" VerticalAlignment="Top" Width="110"/>
         <Label Content="Actividad" HorizontalAlignment="Left" Margin="124,207,0,0" VerticalAlignment="Top" Width="97"/>
         <Label Content="Tipo " HorizontalAlignment="Left" Margin="124,238,0,0" VerticalAlignment="Top" Width="97"/>
-        <TextBox Controls:TextBoxHelper.Watermark="Ingrese Razón Social" HorizontalAlignment="Left" Height="23" Margin="247,53,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" />
-        <TextBox Controls:TextBoxHelper.Watermark="Ingrese Nombre" HorizontalAlignment="Left" Height="23" Margin="247,84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" />
-        <TextBox  Controls:TextBoxHelper.Watermark="Ingrese Mail" HorizontalAlignment="Left" Height="23" Margin="247,115,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" RenderTransformOrigin="0.51,0.487"/>
-        <TextBox Controls:TextBoxHelper.Watermark="Ingrese Dirección" HorizontalAlignment="Left" Height="23" Margin="247,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="185"/>
-        <TextBox Controls:TextBoxHelper.Watermark="Ingrese Teléfono"  HorizontalAlignment="Left" Height="23" Margin="247,176,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="185"/>
+        <TextBox x:Name="txtRazon" Controls:TextBoxHelper.Watermark="Ingrese Razón Social" HorizontalAlignment="Left" Height="23" Margin="247,53,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" />
+        <TextBox x:Name="txtNombre" Controls:TextBoxHelper.Watermark="Ingrese Nombre" HorizontalAlignment="Left" Height="23" Margin="247,84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" />
+        <TextBox x:Name="txtMail" Controls:TextBoxHelper.Watermark="Ingrese Mail" HorizontalAlignment="Left" Height="23" Margin="247,115,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" RenderTransformOrigin="0.51,0.487"/>
+        <TextBox x:Name="txtDire" Controls:TextBoxHelper.Watermark="Ingrese Dirección" HorizontalAlignment="Left" Height="23" Margin="247,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="185"/>
+        <TextBox x:Name="txtNum" Controls:TextBoxHelper.Watermark="Ingrese Teléfono"  HorizontalAlignment="Left" Height="23" Margin="247,176,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="185"/>
         <ComboBox x:Name="cboTipo" HorizontalAlignment="Left" Margin="247,238,0,0" VerticalAlignment="Top" Width="185" SelectedValuePath="IdTipoEmpresa" DisplayMemberPath="Descripcion"/>
 
         <ComboBox x:Name="cboActividad" HorizontalAlignment="Left" Margin="247,207,0,0" VerticalAlignment="Top" Width="185" SelectedValuePath="IdActividadEmpresa" DisplayMemberPath="Descripcion"/>
@@ -30,10 +30,21 @@
 
         <Image HorizontalAlignment="Left" Height="100" Margin="10,10,0,0" VerticalAlignment="Top" Width="100" Source="Images/logo_transparent_background.png" Stretch="Fill"/>
         <Label Content="RUT" HorizontalAlignment="Left" Margin="123,21,0,0" VerticalAlignment="Top" Width="95" RenderTransformOrigin="0.482,2.893"/>
-        <TextBox Controls:TextBoxHelper.Watermark="Ingrese Nro." HorizontalAlignment="Left" Height="23" Margin="247,21,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" />
-        <Button x:Name="btnVolver" Content="Volver" HorizontalAlignment="Left" Margin="453,92,0,0" VerticalAlignment="Top" Width="100" Style="{DynamicResource SquareButtonStyle}"  Height="28" Click="BtnVolver_Click" />
-        <Button Content="Guardar" HorizontalAlignment="Left" Margin="453,25,0,0" VerticalAlignment="Top" Width="100"  Style="{StaticResource AccentedSquareButtonStyle}" Height="28" />
-        <Button Content="Eliminar" HorizontalAlignment="Left" Margin="453,58,0,0" VerticalAlignment="Top" Width="100"  Style="{DynamicResource SquareButtonStyle}" Height="28" />
-        <Image HorizontalAlignment="Left" Height="26" Margin="10,274,0,0" VerticalAlignment="Top" Width="143" Source="Images/Logo Duoc UC Escuela IT.jpg" Stretch="Fill"/>
+        <TextBox x:Name="txtRut" Controls:TextBoxHelper.Watermark="Ingrese Nro." HorizontalAlignment="Left" Height="23" Margin="247,21,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" />
+        <Button x:Name="btnVolver" Content="Volver" HorizontalAlignment="Left" Margin="332,301,0,0" VerticalAlignment="Top" Width="100" Style="{DynamicResource SquareButtonStyle}"  Height="28" Click="BtnVolver_Click" />
+        <Button x:Name="btnGrabar" Content="Guardar" HorizontalAlignment="Left" Margin="125,301,0,0" VerticalAlignment="Top" Width="100"  Style="{StaticResource AccentedSquareButtonStyle}" Height="28" Click="btnGrabar_Click" />
+        <Button Content="Eliminar" HorizontalAlignment="Left" Margin="228,301,0,0" VerticalAlignment="Top" Width="100"  Style="{DynamicResource SquareButtonStyle}" Height="28" Click="btnEliminar_Click"/>
+        <Image HorizontalAlignment="Left" Height="26" Margin="21,382,0,0" VerticalAlignment="Top" Width="143" Source="Images/Logo Duoc UC Escuela IT.jpg" Stretch="Fill"/>
+        <DataGrid x:Name="listCli" HorizontalAlignment="Left" Height="301" VerticalAlignment="Top" Width="449" Margin="448,23,0,0" SelectionChanged="DataGrid_SelectionChanged" RenderTransformOrigin="0.5,0.5">
+            <DataGrid.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.004"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </DataGrid.RenderTransform>
+        </DataGrid>
+        <Button x:Name="btnModif"   Content="Modificar&#xD;&#xA;" HorizontalAlignment="Left" Margin="227,340,0,0" VerticalAlignment="Top" Width="100"  Style="{DynamicResource SquareButtonStyle}" Height="28" Click="btnModif_Click"/>
     </Grid>
 </Controls:MetroWindow>

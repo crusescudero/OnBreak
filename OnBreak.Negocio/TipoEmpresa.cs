@@ -9,24 +9,34 @@ namespace OnBreak.Negocio
 {
     public class TipoEmpresa
     {
-        private Datos.OnBreakEntities conexion = new OnBreakEntities();
+        
         public int IdTipoEmpresa { get; set; }
         public string Descripcion { get; set; }
 
         public List<TipoEmpresa> ListarTodo()
         {
-            List<TipoEmpresa> listaTipo = new List<TipoEmpresa>();
-            List<Datos.TipoEmpresa> listadatos = conexion.TipoEmpresa.ToList();
-
-            foreach (Datos.TipoEmpresa dat in listadatos)
+           
+            try
             {
-                TipoEmpresa tip = new TipoEmpresa();
-                tip.IdTipoEmpresa = tip.IdTipoEmpresa;
-                tip.Descripcion = tip.Descripcion;
+                Datos.OnBreakEntities conexion = new OnBreakEntities();
+                List<Datos.TipoEmpresa> listadatos = conexion.TipoEmpresa.ToList<Datos.TipoEmpresa>();
+                List<Negocio.TipoEmpresa> listaTipo = new List<TipoEmpresa>();
 
-                listaTipo.Add(tip);
+                foreach (Datos.TipoEmpresa objDat in listadatos)
+                {
+                    Negocio.TipoEmpresa objTip = new TipoEmpresa();
+                    objTip.IdTipoEmpresa = objDat.IdTipoEmpresa;
+                    objTip.Descripcion = objDat.Descripcion;
+
+                    listaTipo.Add(objTip);
+                }
+                return listaTipo;
             }
-            return listaTipo;
+            catch(Exception e)
+            {
+                return new List<TipoEmpresa>();
+            }
+
         }
 
     }

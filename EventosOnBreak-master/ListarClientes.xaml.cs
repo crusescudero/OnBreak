@@ -40,7 +40,7 @@ namespace EventosOnBreak_master
             principal.ShowDialog();
         }
 
-        private void llenarGrilla()
+        public void llenarGrilla()
         {
 
             List<OnBreak.Negocio.Cliente> listaClientes = new List<OnBreak.Negocio.Cliente>();
