@@ -8,27 +8,27 @@
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         xmlns:behaviours="clr-namespace:MahApps.Metro.Behaviours;assembly=MahApps.Metro"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
-        Title="Eventos OnBreak | Listado de Clientes" Height="500" Width="800">
-    <Grid Margin="0,0,-0.4,0">
+        Title="Eventos OnBreak | Listado de Clientes" Height="500" Width="929">
+    <Grid Margin="0,0,21,0.5">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="635*"/>
-            <ColumnDefinition Width="159*"/>
+            <ColumnDefinition Width="722*"/>
+            <ColumnDefinition Width="181*"/>
         </Grid.ColumnDefinitions>
         <Image HorizontalAlignment="Left" Height="100" Margin="10,10,0,0" VerticalAlignment="Top" Width="100" Source="Images/logo_transparent_background.png" Stretch="Fill"/>
-        <DataGrid x:Name="dgClientes" HorizontalAlignment="Left" Height="266" Margin="10,157,0,0" VerticalAlignment="Top" Width="774" Background="#FFE8E8E8" BorderBrush="Black" Grid.ColumnSpan="2" />
+        <DataGrid x:Name="dgClientes" HorizontalAlignment="Left" Height="266" Margin="10,157,0,0" VerticalAlignment="Top" Width="893" Background="#FFE8E8E8" BorderBrush="Black" Grid.ColumnSpan="2" />
 
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="138" Margin="147,14,0,0" VerticalAlignment="Top" Width="620" Grid.ColumnSpan="2" />
-        <ComboBox x:Name="cboTipo" HorizontalAlignment="Left" Margin="585,71,0,0" VerticalAlignment="Top" Width="156" Grid.ColumnSpan="2" SelectedValuePath="IdTipoEmpresa" DisplayMemberPath="Descripcion" />
-        <ComboBox x:Name="cboActividad" HorizontalAlignment="Left" Margin="388,71,0,0" VerticalAlignment="Top" Width="156" SelectedValuePath="IdActividadEmpresa" DisplayMemberPath="Descripcion"/>
-        
-        <Button Content="Filtrar" HorizontalAlignment="Left" Margin="14.4,111,0,0" VerticalAlignment="Top" Width="92"  Style="{StaticResource AccentedSquareButtonStyle}" Grid.Column="1" />
-        <Label Content="Filtrar por:" HorizontalAlignment="Left" Margin="147,14,0,0" VerticalAlignment="Top"/>
-        <Label Content="Tipo de Empresa:" HorizontalAlignment="Left" Margin="585,46,0,0" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
-        <Label Content="Actividad:" HorizontalAlignment="Left" Margin="388,46,0,0" VerticalAlignment="Top" Width="120"/>
-        <TextBox Controls:TextBoxHelper.Watermark="Ingrese RUT del Cliente" Controls:TextBoxHelper.ClearTextButton="True" HorizontalAlignment="Left" Height="26" Margin="172,71,0,0"  VerticalAlignment="Top" Width="175" />
-        <Label Content="RUT:" HorizontalAlignment="Left" Margin="172,46,0,0" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="btnVolver" Content="Volver" Grid.Column="1" HorizontalAlignment="Left" Margin="48.6,435,0,0" VerticalAlignment="Top" Width="100" Style="{DynamicResource SquareButtonStyle}" Click="Button_Click" />
-        <Button Content="Limpiar" HorizontalAlignment="Left" Margin="552,111,0,0" VerticalAlignment="Top" Width="92"  Style="{DynamicResource SquareButtonStyle}" Grid.ColumnSpan="2" />
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="138" Margin="147,14,0,0" VerticalAlignment="Top" Width="751" Grid.ColumnSpan="2" />
+        <ComboBox x:Name="cboTipo" HorizontalAlignment="Left" Margin="585,71,0,0" VerticalAlignment="Top" Width="156" Grid.ColumnSpan="2" SelectedValuePath="IdTipoEmpresa" DisplayMemberPath="Descripcion" Height="26" />
+        <ComboBox x:Name="cboActividad" HorizontalAlignment="Left" Margin="388,71,0,0" VerticalAlignment="Top" Width="156" SelectedValuePath="IdActividadEmpresa" DisplayMemberPath="Descripcion" Height="26"/>
+
+        <Button Content="Filtrar" HorizontalAlignment="Left" Margin="49,39,0,0" VerticalAlignment="Top" Width="92"  Style="{StaticResource AccentedSquareButtonStyle}" Grid.Column="1" Height="28" />
+        <Label Content="Filtrar por:" HorizontalAlignment="Left" Margin="147,14,0,0" VerticalAlignment="Top" Height="26" Width="65"/>
+        <Label Content="Tipo de Empresa:" HorizontalAlignment="Left" Margin="585,46,0,0" VerticalAlignment="Top" Width="120" Height="26"/>
+        <Label Content="Actividad:" HorizontalAlignment="Left" Margin="388,46,0,0" VerticalAlignment="Top" Width="120" Height="26"/>
+        <TextBox x:Name="txtRut" Controls:TextBoxHelper.Watermark="Ingrese RUT del Cliente" Controls:TextBoxHelper.ClearTextButton="True" HorizontalAlignment="Left" Height="26" Margin="172,71,0,0"  VerticalAlignment="Top" Width="175" KeyUp="TextBox_KeyUp" />
+        <Label Content="RUT:" HorizontalAlignment="Left" Margin="172,46,0,0" VerticalAlignment="Top" Width="120" Height="26"/>
+        <Button x:Name="btnVolver" Content="Volver" Grid.Column="1" HorizontalAlignment="Left" Margin="49,435,0,0" VerticalAlignment="Top" Width="100" Style="{DynamicResource SquareButtonStyle}" Click="Button_Click" Height="28" />
+        <Button Content="Limpiar" HorizontalAlignment="Left" Margin="51,91,0,0" VerticalAlignment="Top" Width="92"  Style="{DynamicResource SquareButtonStyle}" Grid.Column="1" Height="28" />
         <Image HorizontalAlignment="Left" Height="26" Margin="10,434,0,0" VerticalAlignment="Top" Width="143" Source="Images/Logo Duoc UC Escuela IT.jpg" Stretch="Fill"/>
     </Grid>
 </Controls:MetroWindow>

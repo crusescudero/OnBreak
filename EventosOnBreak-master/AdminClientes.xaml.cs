@@ -181,6 +181,22 @@ namespace EventosOnBreak_master
                 MessageBox.Show("Modificar", "Datos NO modificados");
             }
         }
+
+        private void TxtRut_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.Key != Key.Enter)
+            {
+                
+                return;
+            }
+            else
+            {    
+                Cliente cli = new Cliente();
+                cli.RutCliente = txtRut.Text;
+                listCli.ItemsSource = cli.ListarPorRut();
+                
+            }
+        }
     }
 }
 

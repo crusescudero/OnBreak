@@ -9,6 +9,7 @@ namespace OnBreak.Negocio
 {
     public class Contrato
     {
+        Datos.OnBreakEntities conexion = new OnBreakEntities();
         public string Numero { get; set; }
         public System.DateTime Creacion { get; set; }
         public System.DateTime Termino { get; set; }
@@ -23,28 +24,49 @@ namespace OnBreak.Negocio
         public double ValorTotalContrato { get; set; }
         public string Observaciones { get; set; }
 
+        public bool Agregar()
+        {
+            try
+            {
+                Datos.Contrato objCont = new Datos.Contrato();
+                objCont.Numero = this.Numero;
+                objCont.Creacion = this.Creacion;
+                objCont.Termino = this.Termino;
+                objCont.RutCliente = this.RutCliente;
+                objCont.IdModalidad = this.IdModalidad;
+                objCont.IdTipoEvento = this.IdTipoEvento;
+                objCont.FechaHoraInicio = this.FechaHoraInicio;
+                objCont.FechaHoraTermino= this.FechaHoraTermino;
+                objCont.Asistentes = this.Asistentes;
+                objCont.PersonalAdicional = this.PersonalAdicional;
+                objCont.Realizado = this.Realizado;
+                objCont.ValorTotalContrato = this.ValorTotalContrato;
+                objCont.Observaciones = this.Observaciones;
+
+                conexion.Contrato.Add(objCont);
+                conexion.SaveChanges();
+
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
+
 
         public List<Negocio.Contrato> LeerTodo()
 
         {
 
             try
-
             {
-                //primero necesito conectarme
-                Datos.OnBreakEntities conexion = new OnBreakEntities();
-                //lista de datos: trae todos los datos de la bdd.
-
-                List<Datos.Contrato> listDatos = conexion.Contrato.ToList<Datos.Contrato>(); //Select * de la bdd
-                                                                                             //lista de tipo negocio: se pasan los datos de la lista anterior a esta y es la que se devolverá a presentación
-
-                List<Negocio.Contrato> listNegocio = new List<Contrato>();
-                //llenado de lista
-
-                foreach (Datos.Contrato objDatos in listDatos)//por cada objeto tablaPrueba de Datos que este en la listDatos voy a:
-
-                {   //instanciar un objetoCli de tipo Negocio.Cliente
-
+                List<Negocio.Contrato> listContrato = new List<Contrato>();
+                List<Datos.Contrato> listDatos = conexion.Contrato.ToList(); 
+                
+            
+                foreach (Datos.Contrato objDatos in listDatos)
+                {   
                     Negocio.Contrato objContrato = new Contrato();
                     objContrato.Numero = objDatos.Numero;
                     objContrato.Creacion = objDatos.Creacion;
@@ -59,26 +81,20 @@ namespace OnBreak.Negocio
                     objContrato.Realizado = objDatos.Realizado;
                     objContrato.ValorTotalContrato = objDatos.ValorTotalContrato;
                     objContrato.Observaciones = objDatos.Observaciones;
-                    //finalmente a mi lista de negocios que es la que tengo que devolver le paso el objeto cliente
-
-                    listNegocio.Add(objContrato);
+                                 
+                    listContrato.Add(objContrato);
 
                 }
-
-                return listNegocio;
-
+                return listContrato;
             }
-
             catch (Exception e)
-
             {
-                return new List<Negocio.Contrato>(); //si se cae me devuelve la lista vacia
-
+                return new List<Negocio.Contrato>(); 
             }
 
         }
 
-
+        
 
 
 

@@ -222,6 +222,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\OnBreak.Datos\OnBreak.Datos.csproj">
+      <Project>{62287299-f822-44c1-9e0e-95867ea090b0}</Project>
+      <Name>OnBreak.Datos</Name>
+    </ProjectReference>
     <ProjectReference Include="..\OnBreak.Negocio\OnBreak.Negocio.csproj">
       <Project>{9cc28708-8d56-49d3-80b9-aa1384c7c8bd}</Project>
       <Name>OnBreak.Negocio</Name>

@@ -28,9 +28,10 @@ namespace EventosOnBreak_master
     {
         public ListarContratos()
         {
-            InitializeComponent();
+            InitializeComponent();           
             llenarGrilla();
-            llenarModalidad();
+            llenarMod();
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -51,11 +52,13 @@ namespace EventosOnBreak_master
 
         }
 
-        private void llenarModalidad()
+        private void llenarMod()
         {
-            OnBreak.Negocio.ModalidadServicio mod = new OnBreak.Negocio.ModalidadServicio();
-            cboModalidad.ItemsSource = mod.ListarTodo();
+            ModalidadServicio mod = new ModalidadServicio();
+            cboMod.ItemsSource = mod.ListarTodo();
         }
+
+        
     }
        
 }

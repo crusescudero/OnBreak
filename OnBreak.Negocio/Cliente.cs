@@ -50,15 +50,14 @@ namespace OnBreak.Negocio
         {
             try
             {
-                //Conexión
+                
                 Datos.OnBreakEntities conexion = new OnBreakEntities();
-                //lista de datos: trae todos los datos de la bdd.
-                List<Datos.Cliente> listDatos = conexion.Cliente.ToList<Datos.Cliente>(); //Select * de la bdd
-                                                                                             //lista de tipo negocio: se pasan los datos de la lista anterior a esta y es la que se devolverá a presentación
+                
+                List<Datos.Cliente> listDatos = conexion.Cliente.ToList<Datos.Cliente>(); 
                 List<Negocio.Cliente> listNegocio = new List<Cliente>();
-                //llenado de lista
-                foreach (Datos.Cliente objDatos in listDatos)//por cada objeto tablaPrueba de Datos que este en la listDatos voy a:
-                {   //instanciar un objetoCli de tipo Negocio.Cliente
+              
+                foreach (Datos.Cliente objDatos in listDatos)
+                {   
                     Negocio.Cliente objCliente = new Cliente();
                     objCliente.RutCliente = objDatos.RutCliente;
                     objCliente.RazonSocial = objDatos.RazonSocial;
@@ -68,14 +67,14 @@ namespace OnBreak.Negocio
                     objCliente.Telefono = objDatos.Telefono;
                     objCliente.IdActividadEmpresa = objDatos.IdActividadEmpresa;
                     objCliente.IdTipoEmpresa = objDatos.IdTipoEmpresa;
-                    //finalmente a mi lista de negocios que es la que tengo que devolver le paso el objeto cliente
+                   
                     listNegocio.Add(objCliente);
                 }
                 return listNegocio;
             }
             catch (Exception e)
             {
-                return new List<Negocio.Cliente>(); //si se cae me devuelve la lista vacia
+                return new List<Negocio.Cliente>(); 
             }
 
         }
@@ -119,6 +118,35 @@ namespace OnBreak.Negocio
             catch (Exception e)
             {
                 return false;
+            }
+        }
+
+        public List<Negocio.Cliente> ListarPorRut()
+        {
+            Datos.OnBreakEntities conexion = new OnBreakEntities();
+            List<Negocio.Cliente> listaCli = new List<Cliente>();
+            try
+            {
+                List<Datos.Cliente> listaDatos = conexion.Cliente.Where(c => c.RutCliente.Contains(this.RutCliente)).ToList();
+                foreach (Datos.Cliente objDatos in listaDatos)
+                { 
+                    Negocio.Cliente objCliente = new Cliente();
+                    objCliente.RutCliente = objDatos.RutCliente;
+                    objCliente.RazonSocial = objDatos.RazonSocial;
+                    objCliente.NombreContacto = objDatos.NombreContacto;
+                    objCliente.MailContacto = objDatos.MailContacto;
+                    objCliente.Direccion = objDatos.Direccion;
+                    objCliente.Telefono = objDatos.Telefono;
+                    objCliente.IdActividadEmpresa = objDatos.IdActividadEmpresa;
+                    objCliente.IdTipoEmpresa = objDatos.IdTipoEmpresa;
+                    
+                    listaCli.Add(objCliente);
+                }
+                return listaCli;
+            }
+            catch
+            {
+                return new List<Cliente>();
             }
         }
     }

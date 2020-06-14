@@ -63,6 +63,20 @@ namespace EventosOnBreak_master
             cboTipo.ItemsSource = tip.ListarTodo();
         }
 
-
+        private void TextBox_KeyUp(object sender, KeyEventArgs e)
+        {
+            
+                if (e.Key != Key.Enter)
+                {
+                    return;
+                }
+                else
+                {
+                    Cliente cli = new Cliente();
+                    cli.RutCliente = txtRut.Text;
+                    dgClientes.ItemsSource = cli.ListarPorRut();
+                }
+            
+        }
     }
 }
