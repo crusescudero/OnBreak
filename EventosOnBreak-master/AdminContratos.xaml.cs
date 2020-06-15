@@ -27,7 +27,12 @@ namespace EventosOnBreak_master
         public AdminContratos()
         {
             InitializeComponent();
-            llenarModalidad();
+         
+            TipoEvento te = new TipoEvento();
+            cboEvento.ItemsSource = te.ListaCombo();
+            cboEvento.SelectedValue = 0;
+            Contrato cont = new Contrato();
+            listCon.ItemsSource = cont.LeerTodo();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -48,11 +53,7 @@ namespace EventosOnBreak_master
 
         }
 
-        private void llenarModalidad()
-        {
-            OnBreak.Negocio.ModalidadServicio mod = new OnBreak.Negocio.ModalidadServicio();
-            cboModalidad.ItemsSource = mod.ListarTodo();
-        }
+        
 
         private void btnGuardar_Click(object sender, RoutedEventArgs e)
         {
@@ -63,7 +64,7 @@ namespace EventosOnBreak_master
             objCont.Termino = dpTerm.SelectedDate.Value;
             objCont.RutCliente = txtRut.Text;
             objCont.IdModalidad = cboModalidad.SelectedValue.ToString();
-            objCont.IdModalidad = cboModalidad.SelectedValue.ToString();
+            //objCont.IdTipoEvento = cboModalidad.SelectedValue.ToString();
             objCont.FechaHoraInicio = iniEven.SelectedDate.Value;
             objCont.FechaHoraTermino = termEven.SelectedDate.Value;
             objCont.Asistentes = int.Parse(txtAsis.Text);
@@ -84,6 +85,21 @@ namespace EventosOnBreak_master
              {
                  MessageBox.Show("Grabar", "Datos NO grabados");
              }
+        }
+
+        private void CboEvento_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (cboEvento.SelectedValue != null)
+            {
+                int id_tipo = 0;
+                if (cboEvento.SelectedIndex > -1)
+                {
+                    id_tipo = int.Parse(cboEvento.SelectedValue.ToString());
+                    ModalidadServicio ms = new ModalidadServicio();
+                    ms.IdTipoEvento = id_tipo;
+                    cboModalidad.ItemsSource = ms.ListarPorTE();
+                }
+            }
         }
     }
 }

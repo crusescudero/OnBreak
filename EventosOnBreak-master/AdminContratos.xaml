@@ -10,7 +10,7 @@
         xmlns:behaviours="clr-namespace:MahApps.Metro.Behaviours;assembly=MahApps.Metro"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         Title="Eventos OnBreak | Administrador de contratos" Height="515.612" Width="930.681">
-    <Grid Margin="0,0,33.5,33">
+    <Grid Margin="0,0,33.5,2">
 
         <Label HorizontalAlignment="Left" Margin="123,21,0,0" VerticalAlignment="Top" Width="95" RenderTransformOrigin="0.482,2.893">
             <Label Content="Nro. Contrato" HorizontalAlignment="Left" VerticalAlignment="Top" Width="95" RenderTransformOrigin="0.482,2.893"/>
@@ -19,33 +19,35 @@
         <Label Content="Término Contrato" HorizontalAlignment="Left" Margin="123,83,0,0" VerticalAlignment="Top" Width="104"/>
         <Label Content="Inicio Evento" HorizontalAlignment="Left" Margin="121,148,0,0" VerticalAlignment="Top" Width="104"/>
         <Label Content="Término Evento" HorizontalAlignment="Left" Margin="121,178,0,0" VerticalAlignment="Top" Width="123"/>
-        <Label Content="Observaciones" HorizontalAlignment="Left" Margin="126,348,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.767,11.91"/>
+        <Label Content="Observaciones" HorizontalAlignment="Left" Margin="124,386,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.767,11.91"/>
         <DatePicker x:Name="dpCrea" HorizontalAlignment="Left" Margin="246,51,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.519,-0.753" Width="187"/>
         <DatePicker x:Name="dpTerm" HorizontalAlignment="Left" Margin="246,84,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.128,1.116" Width="187"/>
-        <TextBox x:Name="txtObs" HorizontalAlignment="Left" Height="31" Margin="244,352,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="188"/>
+        <TextBox x:Name="txtObs" HorizontalAlignment="Left" Height="31" Margin="242,390,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="188"/>
         <TextBox x:Name="txtNro"  Controls:TextBoxHelper.Watermark="Ingrese Nro." HorizontalAlignment="Left" Height="23" Margin="247,21,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" />
-        <Control:DateTimePicker x:Name="iniEven" HorizontalAlignment="Left" Height="23" Margin="244,149,0,0" VerticalAlignment="Top" Width="187" Controls:TextBoxHelper.Watermark="Seleccione Fecha y Hora" SelectedTimeFormat="Short" />
+        <Control:DateTimePicker x:Name="iniEven" HorizontalAlignment="Left" Height="23" Margin="244,147,0,0" VerticalAlignment="Top" Width="187" Controls:TextBoxHelper.Watermark="Seleccione Fecha y Hora" SelectedTimeFormat="Short" />
         <Control:DateTimePicker x:Name="termEven" HorizontalAlignment="Left" Height="23" Margin="244,178,0,0"  VerticalAlignment="Top" Width="187" Controls:TextBoxHelper.Watermark="Seleccione Fecha y Hora" SelectedTimeFormat="Short" />
         <Image HorizontalAlignment="Left" Height="100" Margin="10,10,0,0" VerticalAlignment="Top" Width="100" Source="Images/logo_transparent_background.png" Stretch="Fill"/>
-        <Label Content="Estado del Contrato" HorizontalAlignment="Left" Margin="123,313,0,0" VerticalAlignment="Top" Width="123"/>
+        <Label Content="Estado del Contrato" HorizontalAlignment="Left" Margin="121,351,0,0" VerticalAlignment="Top" Width="123"/>
         <Image HorizontalAlignment="Left" Height="26" Margin="10,487,0,0" VerticalAlignment="Top" Width="143" Source="Images/Logo Duoc UC Escuela IT.jpg" Stretch="Fill"/>
-        <RadioButton x:Name="rbtrue" Content="Vigente" HorizontalAlignment="Left" Margin="247,317,0,0" VerticalAlignment="Top" IsChecked="True" GroupName="Vigencia"/>
-        <RadioButton x:Name="rbfalse" Content="No Vigente" HorizontalAlignment="Left" Margin="349,317,0,0" VerticalAlignment="Top" GroupName="Vigencia"/>
+        <RadioButton x:Name="rbtrue" Content="Vigente" HorizontalAlignment="Left" Margin="245,355,0,0" VerticalAlignment="Top" IsChecked="True" GroupName="Vigencia"/>
+        <RadioButton x:Name="rbfalse" Content="No Vigente" HorizontalAlignment="Left" Margin="347,355,0,0" VerticalAlignment="Top" GroupName="Vigencia"/>
         <Button x:Name="btnVolver" Content="Volver" HorizontalAlignment="Left" Margin="366,445,0,-18" VerticalAlignment="Top" Width="100" Style="{DynamicResource SquareButtonStyle}" Click="Button_Click" Height="28" />
 
         <Button Content="Guardar" HorizontalAlignment="Left" Margin="124,447,0,-20" VerticalAlignment="Top" Width="100"  Style="{StaticResource AccentedSquareButtonStyle}" Height="28" Click="btnGuardar_Click" />
         <Button Content="Eliminar" HorizontalAlignment="Left" Margin="244,446,0,-19" VerticalAlignment="Top" Width="100"  Style="{DynamicResource SquareButtonStyle}" Height="28" />
         <Image HorizontalAlignment="Left" Height="100" Margin="10,10,0,0" VerticalAlignment="Top" Width="100" Source="Images/logo_transparent_background.png" Stretch="Fill"/>
-        <ComboBox x:Name="cboModalidad" HorizontalAlignment="Left" Margin="244,213,0,0" VerticalAlignment="Top" Width="187" SelectedValuePath="IdModalidad" DisplayMemberPath="Nombre"/>
-        <Label Content="Modalidad Servicio" HorizontalAlignment="Left" Margin="121,213,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.595,3.159" Width="112"/>
-        <Label Content="Asistentes" HorizontalAlignment="Left" Margin="121,243,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.595,3.159" Width="65"/>
-        <TextBox x:Name="txtAsis" Controls:TextBoxHelper.Watermark="Ingrese cantidad de asistentes" HorizontalAlignment="Left" Height="23" Margin="244,244,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" RenderTransformOrigin="3.91,-3.987"/>
-        <Label Content="Personal Adicional" HorizontalAlignment="Left" Margin="121,274,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.595,3.159" Width="112"/>
-        <TextBox x:Name="txtPers" Controls:TextBoxHelper.Watermark="Ingrese personal adicional" HorizontalAlignment="Left" Height="23" Margin="244,275,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" RenderTransformOrigin="3.91,-3.987"/>
+        <ComboBox x:Name="cboModalidad" HorizontalAlignment="Left" Margin="244,248,0,0" VerticalAlignment="Top" Width="187" SelectedValuePath="IdModalidad" DisplayMemberPath="Nombre"/>
+        <Label Content="Modalidad Servicio" HorizontalAlignment="Left" Margin="122,251,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.595,3.159" Width="112"/>
+        <Label Content="Asistentes" HorizontalAlignment="Left" Margin="119,281,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.595,3.159" Width="65"/>
+        <TextBox x:Name="txtAsis" Controls:TextBoxHelper.Watermark="Ingrese cantidad de asistentes" HorizontalAlignment="Left" Height="23" Margin="242,282,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" RenderTransformOrigin="3.91,-3.987"/>
+        <Label Content="Personal Adicional" HorizontalAlignment="Left" Margin="119,312,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.595,3.159" Width="112"/>
+        <TextBox x:Name="txtPers" Controls:TextBoxHelper.Watermark="Ingrese personal adicional" HorizontalAlignment="Left" Height="23" Margin="242,313,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" RenderTransformOrigin="3.91,-3.987"/>
         <DataGrid x:Name="listCon" HorizontalAlignment="Left" Height="407" Margin="458,26,-17,0" VerticalAlignment="Top" Width="451"/>
         <Label Content="Rut Cliente" HorizontalAlignment="Left" Margin="121,119,0,0" VerticalAlignment="Top" Width="104"/>
         <TextBox x:Name="txtRut"  Controls:TextBoxHelper.Watermark="Ingrese Rut Cliente" HorizontalAlignment="Left" Height="23" Margin="246,116,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" />
         <StackPanel HorizontalAlignment="Left" Height="100" Margin="516,239,0,0" VerticalAlignment="Top" Width="100"/>
+        <Label Content="Tipo de evento" HorizontalAlignment="Left" Margin="122,216,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.595,3.159" Width="112"/>
+        <ComboBox x:Name="cboEvento" HorizontalAlignment="Left" Margin="244,215,0,0" VerticalAlignment="Top" Width="187" SelectedValuePath="IdEvento" DisplayMemberPath="Descripcion" SelectionChanged="CboEvento_SelectionChanged"/>
 
 
     </Grid>

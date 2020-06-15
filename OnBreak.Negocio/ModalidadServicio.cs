@@ -9,39 +9,35 @@ namespace OnBreak.Negocio
 {
     public class ModalidadServicio
     {
-
+        private OnBreakEntities conn = new OnBreakEntities();
         public string IdModalidad { get; set; }
         public int IdTipoEvento { get; set; }
         public string Nombre { get; set; }
         public double ValorBase { get; set; }
         public int PersonalBase { get; set; }
 
-        public List<ModalidadServicio> ListarTodo()
+
+        public List<Negocio.ModalidadServicio> ListarPorTE()
         {
             try
             {
-                Datos.OnBreakEntities conexion = new OnBreakEntities();
-                List<Datos.ModalidadServicio> listadatos = conexion.ModalidadServicio.ToList<Datos.ModalidadServicio>();
-                List<Negocio.ModalidadServicio> listaTipo = new List<ModalidadServicio>();
-
-                foreach (Datos.ModalidadServicio objDat in listadatos)
+                List<Datos.ModalidadServicio> listDatos = conn.ModalidadServicio.Where(ms => ms.IdTipoEvento == this.IdTipoEvento).ToList();
+                List<Negocio.ModalidadServicio> listMS = new List<ModalidadServicio>();
+                foreach (Datos.ModalidadServicio ms in listDatos)
                 {
-                    Negocio.ModalidadServicio objTip = new ModalidadServicio();
-                    objTip.IdModalidad = objDat.IdModalidad;
-                    objTip.IdTipoEvento = objDat.IdTipoEvento;
-                    objTip.Nombre = objDat.Nombre;
-                    objTip.ValorBase = objDat.ValorBase;
-                    objTip.PersonalBase = objDat.PersonalBase;
-
-
-                    listaTipo.Add(objTip);
+                    Negocio.ModalidadServicio mod = new ModalidadServicio();
+                    mod.IdModalidad = ms.IdModalidad;
+                    mod.IdTipoEvento = ms.IdTipoEvento;
+                    mod.Nombre = ms.Nombre;
+                    listMS.Add(mod);
                 }
-                return listaTipo;
+                return listMS;
             }
-            catch (Exception e)
+            catch
             {
                 return new List<ModalidadServicio>();
             }
+
         }
     }
 }

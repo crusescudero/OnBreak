@@ -30,7 +30,11 @@ namespace EventosOnBreak_master
         {
             InitializeComponent();           
             llenarGrilla();
-            llenarMod();
+            TipoEvento te = new TipoEvento();
+            cboTipoEvento.ItemsSource = te.ListaCombo();
+            cboTipoEvento.SelectedValue = 0;
+            Contrato cont = new Contrato();
+            dgContratos.ItemsSource = cont.LeerTodo();
 
         }
 
@@ -52,13 +56,22 @@ namespace EventosOnBreak_master
 
         }
 
-        private void llenarMod()
-        {
-            ModalidadServicio mod = new ModalidadServicio();
-            cboMod.ItemsSource = mod.ListarTodo();
-        }
 
-        
+        private void CboTipoEvento_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+            if (cboTipoEvento.SelectedValue != null)
+            {
+                int id_tipo = 0;
+                if (cboTipoEvento.SelectedIndex > -1)
+                {
+                    id_tipo = int.Parse(cboTipoEvento.SelectedValue.ToString());
+                    ModalidadServicio ms = new ModalidadServicio();
+                    ms.IdTipoEvento = id_tipo;
+                    cboMod.ItemsSource = ms.ListarPorTE();
+                }
+            }
+        }
     }
        
 }

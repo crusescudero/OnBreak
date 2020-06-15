@@ -9,13 +9,17 @@ namespace OnBreak.Negocio
 {
     public class Contrato
     {
-        Datos.OnBreakEntities conexion = new OnBreakEntities();
+        private OnBreakEntities conn = new OnBreakEntities();
         public string Numero { get; set; }
         public System.DateTime Creacion { get; set; }
         public System.DateTime Termino { get; set; }
         public string RutCliente { get; set; }
         public string IdModalidad { get; set; }
+        public string Nombre { get; set; }
+        public double ValorBase { get; set; }
+        public int PersonalBase { get; set; }
         public int IdTipoEvento { get; set; }
+        public string Descripcion { get; set; }
         public System.DateTime FechaHoraInicio { get; set; }
         public System.DateTime FechaHoraTermino { get; set; }
         public int Asistentes { get; set; }
@@ -43,8 +47,8 @@ namespace OnBreak.Negocio
                 objCont.ValorTotalContrato = this.ValorTotalContrato;
                 objCont.Observaciones = this.Observaciones;
 
-                conexion.Contrato.Add(objCont);
-                conexion.SaveChanges();
+                conn.Contrato.Add(objCont);
+                conn.SaveChanges();
 
                 return true;
             }
@@ -61,35 +65,41 @@ namespace OnBreak.Negocio
 
             try
             {
-                List<Negocio.Contrato> listContrato = new List<Contrato>();
-                List<Datos.Contrato> listDatos = conexion.Contrato.ToList(); 
-                
-            
-                foreach (Datos.Contrato objDatos in listDatos)
-                {   
-                    Negocio.Contrato objContrato = new Contrato();
-                    objContrato.Numero = objDatos.Numero;
-                    objContrato.Creacion = objDatos.Creacion;
-                    objContrato.Termino = objDatos.Termino;
-                    objContrato.RutCliente = objDatos.RutCliente;
-                    objContrato.IdModalidad = objDatos.IdModalidad;
-                    objContrato.IdTipoEvento = objDatos.IdTipoEvento;
-                    objContrato.FechaHoraInicio = objDatos.FechaHoraInicio;
-                    objContrato.FechaHoraTermino = objDatos.FechaHoraTermino;
-                    objContrato.Asistentes = objDatos.Asistentes;
-                    objContrato.PersonalAdicional = objDatos.PersonalAdicional;
-                    objContrato.Realizado = objDatos.Realizado;
-                    objContrato.ValorTotalContrato = objDatos.ValorTotalContrato;
-                    objContrato.Observaciones = objDatos.Observaciones;
-                                 
-                    listContrato.Add(objContrato);
-
+                List<Contrato> listCont = new List<Contrato>();
+                var listDatos = conn.Contrato.Join(conn.ModalidadServicio, c => c.IdModalidad, m => m.IdModalidad, (c, m) => new { c, m })
+                    .Join(conn.TipoEvento, cm => cm.c.IdTipoEvento, te => te.IdTipoEvento, (cm, te) => new { cm, te })
+                    .Where(cont => (cont.cm.c.RutCliente == this.RutCliente || this.RutCliente == null)
+                           && (cont.cm.c.IdTipoEvento == this.IdTipoEvento || this.IdTipoEvento == 0)
+                           && (cont.cm.c.IdModalidad == this.IdModalidad || this.IdModalidad == null)).ToList();
+                foreach (var v_cont in listDatos)
+                {
+                    Contrato c = new Contrato();
+                    c.Numero = v_cont.cm.c.Numero;
+                    c.Creacion = v_cont.cm.c.Creacion;
+                    c.Termino = v_cont.cm.c.Termino;
+                    c.RutCliente = v_cont.cm.c.RutCliente;
+                    c.IdModalidad = v_cont.cm.c.IdModalidad;
+                    c.Nombre = v_cont.cm.m.Nombre;
+                    c.ValorBase = v_cont.cm.m.ValorBase;
+                    c.PersonalBase = v_cont.cm.m.PersonalBase;
+                    c.PersonalAdicional = v_cont.cm.c.PersonalAdicional;
+                    c.IdTipoEvento = v_cont.cm.c.IdTipoEvento;
+                    c.Descripcion = v_cont.te.Descripcion;
+                    c.FechaHoraInicio = v_cont.cm.c.FechaHoraInicio;
+                    c.FechaHoraTermino = v_cont.cm.c.FechaHoraTermino;
+                    c.Asistentes = v_cont.cm.c.Asistentes;
+                    c.PersonalAdicional = v_cont.cm.c.PersonalAdicional;
+                    c.Realizado = v_cont.cm.c.Realizado;
+                    c.ValorTotalContrato = v_cont.cm.c.ValorTotalContrato;
+                    c.Observaciones = v_cont.cm.c.Observaciones;
+                    listCont.Add(c);
                 }
-                return listContrato;
+                return listCont;
             }
             catch (Exception e)
             {
-                return new List<Negocio.Contrato>(); 
+                return new List<Contrato>();
+
             }
 
         }

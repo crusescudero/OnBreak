@@ -16,23 +16,26 @@
             <ColumnDefinition Width="5*"/>
         </Grid.ColumnDefinitions>
 
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="138" Margin="147,14,0,0" VerticalAlignment="Top" Width="620"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="138" Margin="147,14,0,0" VerticalAlignment="Top" Width="620">
+            <Label x:Name="label" Content="Tipo Evento" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1.321,0.712" Margin="350,45,0,0"/>
+        </Border>
         <Image HorizontalAlignment="Left" Height="100" Margin="10,10,0,0" VerticalAlignment="Top" Width="100" Source="Images/logo_transparent_background.png" Stretch="Fill"/>
-        <TextBox Control:TextBoxHelper.Watermark="Nro. de contrato"  Control:TextBoxHelper.ClearTextButton="True" HorizontalAlignment="Left" Margin="388,72,0,0" VerticalAlignment="Top" Width="156" Foreground="Black" Height="26"/>
-        <TextBox Control:TextBoxHelper.Watermark="Ingrese RUT del cliente"  Control:TextBoxHelper.ClearTextButton="True" HorizontalAlignment="Left" Margin="172,72,0,0" VerticalAlignment="Top" Width="175" Foreground="Black" Height="26" RenderTransformOrigin="0.764,0.462"/>
-        <ComboBox x:Name="cboMod" Control:TextBoxHelper.Watermark="Modalidad de contrato" HorizontalAlignment="Left" Margin="585,72,0,0" VerticalAlignment="Top" Width="171" Height="26" SelectedValuePath="IdModalidad" DisplayMemberPath="Nombre"/>
+        <TextBox Control:TextBoxHelper.Watermark="Nro. de contrato"  Control:TextBoxHelper.ClearTextButton="True" HorizontalAlignment="Left" Margin="322,71,0,0" VerticalAlignment="Top" Width="104" Foreground="Black" Height="26"/>
+        <TextBox Control:TextBoxHelper.Watermark="Ingrese RUT del cliente"  Control:TextBoxHelper.ClearTextButton="True" HorizontalAlignment="Left" Margin="172,72,0,0" VerticalAlignment="Top" Width="125" Foreground="Black" Height="26" RenderTransformOrigin="0.764,0.462"/>
+        <ComboBox x:Name="cboMod" Control:TextBoxHelper.Watermark="Modalidad de contrato" HorizontalAlignment="Left" Margin="589,105,0,0" VerticalAlignment="Top" Width="161" Height="26" SelectedValuePath="IdModalidad" DisplayMemberPath="Nombre"/>
 
 
         <DataGrid x:Name="dgContratos" HorizontalAlignment="Left" Height="266" Margin="9,157,0,0" VerticalAlignment="Top" Width="774" Background="#FFE8E8E8" BorderBrush="Black" />
         <Image HorizontalAlignment="Left" Height="26" Margin="10,434,0,0" VerticalAlignment="Top" Width="143" Source="Images/Logo Duoc UC Escuela IT.jpg" Stretch="Fill"/>
 
         <Button x:Name="btnVolver" Content="Volver" HorizontalAlignment="Left" Margin="683,434,0,0" VerticalAlignment="Top" Width="100" Style="{DynamicResource SquareButtonStyle}" Click="Button_Click" Height="28" />
-        <Label Content="Filtrar por:" HorizontalAlignment="Left" Margin="147,14,0,0" VerticalAlignment="Top" Height="26" Width="64"/>
-        <Button Content="Filtrar" HorizontalAlignment="Left" Margin="649,111,0,0" VerticalAlignment="Top" Width="92"  Style="{StaticResource AccentedSquareButtonStyle}" Height="28" />
-        <Button Content="Limpiar" HorizontalAlignment="Left" Margin="552,111,0,0" VerticalAlignment="Top" Width="92"  Style="{DynamicResource SquareButtonStyle}" Height="28" />
-        <Label Content="Modalidad de contrato:" HorizontalAlignment="Left" Margin="585,46,0,0" VerticalAlignment="Top" Width="156" Height="26"/>
-        <Label Content="Nro. de contrato:" HorizontalAlignment="Left" Margin="388,46,0,0" VerticalAlignment="Top" Width="120" Height="26"/>
+        <Label Content="Filtrar por:" HorizontalAlignment="Left" Margin="162,15,0,0" VerticalAlignment="Top" Height="26" Width="64" RenderTransformOrigin="-0.395,0.593"/>
+        <Button Content="Filtrar" HorizontalAlignment="Left" Margin="284,116,0,0" VerticalAlignment="Top" Width="92"  Style="{StaticResource AccentedSquareButtonStyle}" Height="28" />
+        <Button Content="Limpiar" HorizontalAlignment="Left" Margin="174,116,0,0" VerticalAlignment="Top" Width="92"  Style="{DynamicResource SquareButtonStyle}" Height="28" />
+        <Label Content="Modalidad de contrato:" HorizontalAlignment="Left" Margin="431,100,0,0" VerticalAlignment="Top" Width="156" Height="26"/>
+        <Label Content="Nro. de contrato:" HorizontalAlignment="Left" Margin="321,45,0,0" VerticalAlignment="Top" Width="120" Height="26"/>
         <Label Content="RUT:" HorizontalAlignment="Left" Margin="172,46,0,0" VerticalAlignment="Top" Width="120" Height="26"/>
+        <ComboBox x:Name="cboTipoEvento" Control:TextBoxHelper.Watermark="Tipo Evento" HorizontalAlignment="Left" Margin="587,62,0,0" VerticalAlignment="Top" Width="158" SelectedValuePath="IdTipoEvento" DisplayMemberPath="Descripcion" SelectionChanged="CboTipoEvento_SelectionChanged"/>
 
 
     </Grid>
